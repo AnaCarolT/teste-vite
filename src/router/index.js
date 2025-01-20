@@ -1,13 +1,13 @@
-import { createRouter, createWebHashHistory } from 'vue-router'; // Usando Hash History para GitHub Pages
+import { createRouter, createWebHistory } from 'vue-router';
 import MenuPrincipal from '@/views/MenuPrincipal.vue';
 import Usuarios from '@/views/Usuarios.vue'; // Este será o componente usado para exibir a lista de usuários
 import Chat from '@/views/Chat.vue';
 import JanelaProfileUsuario from '@/views/JanelaProfileUsuario.vue';
-import DetalhesPosts from '@/views/DetalhesPosts.vue'; // Componente para detalhes dos posts
+import DetalhesPosts from '@/views/DetalhesPosts.vue'; // Import the new component
 import Notificacoes from '@/views/Notificacoes.vue';
 
 const router = createRouter({
-  history: createWebHashHistory('/teste-vite/'), // Substitua 'repository-name' pelo nome do seu repositório
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
@@ -27,7 +27,7 @@ const router = createRouter({
     {
       path: '/post/:postId',
       name: 'detalhes-posts',
-      component: DetalhesPosts, // Rota para detalhes do post
+      component: DetalhesPosts, // Route for post details
     },
     {
       path: '/chat',
@@ -38,11 +38,6 @@ const router = createRouter({
       path: '/notificacoes',
       name: 'notificacoes',
       component: Notificacoes,
-    },
-    {
-      path: '/:catchAll(.*)',
-      name: 'not-found',
-      component: () => import('@/views/NotFound.vue'), // Componente opcional para 404
     },
   ],
 });

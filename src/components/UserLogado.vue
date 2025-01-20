@@ -1,6 +1,6 @@
 <template>
     <!-- Link para o perfil do usuário principal -->
-    <a :href="`/profile/${main}`">
+    <a :href="`/teste-vite/profile/${main}`">
       <!-- Imagem do perfil do usuário principal com efeitos de hover -->
       <img 
         :src="`https://i.pravatar.cc/50?img=${main}`" 

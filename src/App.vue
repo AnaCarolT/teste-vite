@@ -6,7 +6,7 @@
         <!-- Logo e nome -->
         <div class="menu-left flex items-center space-x-2">
           <a
-            href="/"
+            href="/teste-vite"
             class="flex items-center text-2xl font-bold text-indigo-800"
           >
             <span>UP</span>
@@ -37,7 +37,7 @@
         <!-- Ícones de navegação -->
         <div class="menu-center flex space-x-12">
           <!-- Ícone Home -->
-          <a href="/" class="text-black-700">
+          <a href="/teste-vite" class="text-black-700">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -54,7 +54,7 @@
           </a>
 
           <!-- Ícone Usuários -->
-          <a href="/users" class="text-black-700">
+          <a href="/teste-vite/users" class="text-black-700">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -71,7 +71,7 @@
           </a>
 
           <!-- Ícone Chat -->
-          <a href="/chat" class="text-black-700">
+          <a href="/teste-vite/chat" class="text-black-700">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -88,7 +88,7 @@
           </a>
 
           <!-- Ícone Notificações -->
-          <a href="/notificacoes">
+          <a href="/teste-vite/notificacoes">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
