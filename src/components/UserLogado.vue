@@ -22,9 +22,11 @@ export default {
   mounted() {
     // Define o baseURL dinamicamente com base no ambiente do Vite
     this.baseURL = import.meta.env.BASE_URL || '/teste-vite/';
+    console.log(`Base URL set to: ${this.baseURL}`); // Exibe o baseURL no console
   },
 };
 </script>
+
 
 
 <!-- Codigo para teste local -->
