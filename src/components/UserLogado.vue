@@ -1,6 +1,6 @@
 <template>
   <!-- Link para o perfil do usuário principal -->
-  <a :href="`${baseURL}profile/${main}`">
+  <a :href="`profile/${main}`">
     <!-- Imagem do perfil do usuário principal com efeitos de hover -->
     <img
       :src="`https://i.pravatar.cc/50?img=${main}`"
@@ -17,10 +17,6 @@ export default {
       // ID do usuário principal que está logado
       main: 11, // Substituir pelo ID do usuário autenticado
     };
-  },
-  mounted() {
-    // Define o baseURL dinamicamente com base no ambiente do Vite
-    this.baseURL = import.meta.env.BASE_URL;
   },
 };
 </script>
