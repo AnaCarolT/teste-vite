@@ -1,38 +1,3 @@
-<template>
-  <!-- Componente de sugestão de pessoas que talvez você conheça -->
-  <div class="p-4 bg-white border border-gray-200 rounded-lg shadow">
-    <h3 class="mb-6 text-xl">Pessoas que talvez conheça</h3>
-
-    <div class="space-y-4">
-      <!-- Lista de usuários sugeridos -->
-      <div
-        v-for="user in filteredUsers"
-        :key="user.id"
-        class="flex items-center justify-between flex-wrap"
-      >
-        <!-- Avatar e nome do usuário -->
-        <div class="flex items-center space-x-2">
-          <img
-            :src="'https://i.pravatar.cc/300?img=' + user.id"
-            class="w-[40px] rounded-full"
-            alt="Avatar do usuário"
-          />
-          <p class="text-xs truncate">
-            <strong>{{ user.name }}</strong>
-          </p>
-        </div>
-        <!-- Botão para visualizar o perfil do usuário -->
-        <button
-          @click="navigateToProfile(user.id)"
-          class="py-2 px-3 bg-indigo-800 text-white text-xs rounded-lg hover:bg-indigo-700"
-        >
-          Mostrar
-        </button>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script>
 import axios from "axios";
 
@@ -87,24 +52,22 @@ export default {
       // Navega para o perfil do usuário usando Vue Router
       this.$router.push(`/profile/${userId}`);
     },
+    reloadData() {
+      // Recarrega os dados quando o ID do perfil muda
+      this.fetchUsers();
+    },
   },
   mounted() {
     // Chama a função de busca quando o componente é montado
     this.fetchUsers();
   },
+  watch: {
+    // Observa alterações no parâmetro da rota e recarrega os dados
+    "$route.params.id": "reloadData",
+  },
 };
 </script>
 
-<style scoped>
-/* Garante que o layout não fique "amassado" em telas menores */
-.flex-wrap {
-  flex-wrap: wrap;
-}
-img {
-  max-width: 100%;
-  height: auto;
-}
-</style>
 
 
 <!-- Codigo para teste local -->
