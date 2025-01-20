@@ -21,9 +21,10 @@
             <strong>{{ user.name }}</strong>
           </p>
         </div>
+
         <!-- Botão para visualizar o perfil do usuário -->
         <router-link
-          :to="{ path: `${baseURL}profile/${user.id}` }"
+          :to="{ name: 'detalhes-profile', params: { id: user.id } }"
           class="py-2 px-3 bg-indigo-800 text-white text-xs rounded-lg hover:bg-indigo-700"
         >
           Mostrar
@@ -41,7 +42,6 @@ export default {
     return {
       users: [], // Todos os usuários buscados da API
       randomUsers: [], // Usuários aleatórios filtrados
-      baseURL: "/", // Caminho base dinâmico
     };
   },
   computed: {
@@ -88,7 +88,6 @@ export default {
   mounted() {
     // Chama a função de busca quando o componente é montado
     this.fetchUsers();
-    this.baseURL = import.meta.env.BASE_URL || "/"; // Define o base URL dinamicamente
   },
 };
 </script>
