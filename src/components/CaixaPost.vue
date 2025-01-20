@@ -32,33 +32,33 @@ export default {
     };
   },
   methods: {
-  async postContent() {
-    if (!this.newPostBody.trim()) {
-      alert("A caixa não pode estar vazia.");
-      return;
-    }
+    async postContent() {
+      if (!this.newPostBody.trim()) {
+        alert("A caixa não pode estar vazia.");
+        return;
+      }
 
-    // Gera um ID único com base na sessão ou nos posts locais
-    const storedPosts = JSON.parse(sessionStorage.getItem("posts-11")) || [];
-    const maxId = Math.max(...storedPosts.map((post) => post.id), 100); // Garante que os IDs comecem a partir de 101
-    const newId = maxId + 1;
+      // Gera um ID único com base na sessão ou nos posts locais
+      const storedPosts = JSON.parse(sessionStorage.getItem("posts-11")) || [];
+      const maxId = Math.max(...storedPosts.map((post) => post.id), 100); // Garante que os IDs comecem a partir de 101
+      const newId = maxId + 1;
 
-    const post = {
-      userId: 11,
-      id: newId, // ID único gerado dinamicamente
-      title: "New Post",
-      body: this.newPostBody.trim(),
-    };
+      const post = {
+        userId: 11,
+        id: newId, // ID único gerado dinamicamente
+        title: "New Post",
+        body: this.newPostBody.trim(),
+      };
 
-    try {
-      console.log("Adicionando post na API:", post);
-      // Envia o novo post para a API
-      const response = await axios.post(
-        "https://jsonplaceholder.typicode.com/posts",
-        post
-      );
+      try {
+        console.log("Adicionando post na API:", post);
+        // Envia o novo post para a API
+        const response = await axios.post(
+          "https://jsonplaceholder.typicode.com/posts",
+          post
+        );
 
-      const addedPost = { ...response.data, id: newId }; // Mantém o ID gerado localmente
+        const addedPost = { ...response.data, id: newId }; // Mantém o ID gerado localmente
         console.log("Post criado dinamicamente com sucesso:", addedPost);
         console.log("Conteúdo adicionado à API:", response.data); // Log do conteúdo da resposta da API
 
@@ -71,11 +71,10 @@ export default {
 
         // Limpa o campo de entrada
         this.newPostBody = "";
-    } catch (error) {
-      console.error("Erro ao criar o post:", error);
-    }
+      } catch (error) {
+        console.error("Erro ao criar o post:", error);
+      }
+    },
   },
-},
-
 };
 </script>

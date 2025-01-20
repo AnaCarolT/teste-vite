@@ -23,7 +23,7 @@
         </div>
         <!-- Botão para visualizar o perfil do usuário -->
         <a
-          :href="`/profile/${user.id}`"
+          :href="`${baseURL}profile/${user.id}`"
           class="py-2 px-3 bg-indigo-800 text-white text-xs rounded-lg hover:bg-indigo-700"
         >
           Mostrar
@@ -34,20 +34,21 @@
 </template>
 
 <script>
-import axios from "axios";
+import axios from 'axios';
 
 export default {
   data() {
     return {
       users: [], // Todos os usuários buscados da API
       randomUsers: [], // Usuários aleatórios filtrados
+      baseURL: '/', // Define the base URL dynamically
     };
   },
   computed: {
     filteredUsers() {
       // Filtra os usuários para excluir o usuário atual (baseado nos parâmetros da rota)
       const currentUserId = parseInt(this.$route.params.id);
-      return this.randomUsers.filter(user => user.id !== currentUserId);
+      return this.randomUsers.filter((user) => user.id !== currentUserId);
     },
   },
   methods: {
@@ -55,7 +56,7 @@ export default {
       try {
         // Faz a requisição à API para buscar usuários
         const response = await axios.get(
-          "https://jsonplaceholder.typicode.com/users"
+          'https://jsonplaceholder.typicode.com/users'
         );
         this.users = response.data;
 
@@ -66,7 +67,7 @@ export default {
           parseInt(this.$route.params.id)
         );
       } catch (error) {
-        console.error("Erro ao buscar usuários:", error);
+        console.error('Erro ao buscar usuários:', error);
       }
     },
     getRandomUsers(users, count, currentUserId) {
@@ -87,6 +88,7 @@ export default {
   mounted() {
     // Chama a função de busca quando o componente é montado
     this.fetchUsers();
+    this.baseURL = import.meta.env.BASE_URL || '/'; // Define o base URL dinamicamente
   },
 };
 </script>

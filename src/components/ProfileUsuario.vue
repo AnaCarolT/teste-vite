@@ -1,6 +1,8 @@
 <template>
   <!-- Componente de Exibição de Perfil do Usuário -->
-  <div class="p-4 bg-white border border-gray-200 text-center rounded-lg shadow">
+  <div
+    class="p-4 bg-white border border-gray-200 text-center rounded-lg shadow"
+  >
     <!-- Informações básicas do usuário -->
     <div class="text-center mb-8 md:mb-0">
       <!-- Imagem do perfil do usuário -->
@@ -28,9 +30,7 @@
       <h2 class="text-xl font-semibold text-indigo-800 dark:text-white mb-4">
         Sobre mim
       </h2>
-      <p class="text-gray-700 dark:text-gray-300 mb-6">
-        Nada adicionado.
-      </p>
+      <p class="text-gray-700 dark:text-gray-300 mb-6">Nada adicionado.</p>
 
       <!-- Seção de Contato -->
       <h2 class="text-xl font-semibold text-indigo-800 dark:text-white mb-4">

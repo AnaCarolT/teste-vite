@@ -24,6 +24,7 @@
               <!-- Nome do usuário clicável para redirecionar para o perfil -->
               <router-link
                 :to="`/profile/${post.userId}`"
+                @click.stop
                 :class="{
                   'font-bold text-indigo-800 hover:underline':
                     $route.params.id != post.userId.toString(),
@@ -159,7 +160,10 @@ export default {
 
       // Carrega posts armazenados na sessão
       const storedPosts = JSON.parse(sessionStorage.getItem("posts-11")) || [];
-      console.log("Carregando posts armazenados para o usuário 11:", storedPosts);
+      console.log(
+        "Carregando posts armazenados para o usuário 11:",
+        storedPosts
+      );
       this.posts = [...this.posts, ...storedPosts].filter(
         (post, index, self) => index === self.findIndex((p) => p.id === post.id) // Evita duplicatas
       );
@@ -185,7 +189,8 @@ export default {
 
       // Persiste novos posts para o usuário 11 no sessionStorage
       if (post.userId === 11) {
-        const storedPosts = JSON.parse(sessionStorage.getItem("posts-11")) || [];
+        const storedPosts =
+          JSON.parse(sessionStorage.getItem("posts-11")) || [];
         if (!storedPosts.some((p) => p.id === post.id)) {
           storedPosts.unshift(post);
           sessionStorage.setItem("posts-11", JSON.stringify(storedPosts));
