@@ -1,11 +1,13 @@
 <template>
-  <a :href="`profile/${main}`">
+  <!-- Link clicável para o perfil do usuário principal -->
+  <div @click="navigateToProfile" class="cursor-pointer">
+    <!-- Imagem do perfil do usuário principal com efeitos de hover -->
     <img
       :src="`https://i.pravatar.cc/50?img=${main}`"
       class="rounded-full border-4 border-blue-900 transition-transform duration-600 hover:scale-105 hover:border-indigo-500"
       alt="User Avatar"
     />
-  </a>
+  </div>
 </template>
 
 <script>
@@ -15,6 +17,12 @@ export default {
       // ID do usuário principal que está logado
       main: 11, // Substituir pelo ID do usuário autenticado
     };
+  },
+  methods: {
+    navigateToProfile() {
+      // Navega para a rota do perfil do usuário
+      this.$router.push(`/profile/${this.main}`);
+    },
   },
 };
 </script>
