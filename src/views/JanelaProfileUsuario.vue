@@ -36,7 +36,6 @@
 
 <script>
 import axios from "axios";
-import PessoasQueTalvezConheca from "../components/PessoasQueTalvezConheca.vue";
 import Trends from "../components/Trends.vue";
 import ProfileUsuario from "../components/ProfileUsuario.vue";
 import Feed from "../components/Feed.vue";
@@ -45,7 +44,6 @@ import CaixaPost from "../components/CaixaPost.vue";
 export default {
   name: "JanelaProfile",
   components: {
-    PessoasQueTalvezConheca,
     Trends,
     ProfileUsuario,
     Feed,
