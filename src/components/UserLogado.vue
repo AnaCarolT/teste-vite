@@ -3,7 +3,7 @@
   <div 
     @click="navigateToProfile" 
     class="cursor-pointer" 
-    v-show="$route.name !== 'detalhes-profile'"  <!-- Ensures this is hidden on profile pages -->
+    v-show="!$route.path.includes('/profile/')"  <!-- Ensures this is hidden on any profile page -->
   >
     <!-- Imagem do perfil do usuário principal com efeitos de hover -->
     <img
@@ -30,4 +30,3 @@ export default {
   },
 };
 </script>
-
