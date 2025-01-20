@@ -85,6 +85,9 @@ export default {
       return selected;
     },
     navigateToProfile(userId) {
+      // Loga o userId no console
+      console.log("Navigating to profile with UserId:", userId);
+
       // Navega para home e depois para o perfil do usuário
       if (this.$route.name === "detalhes-profile") {
         this.$router.push({ name: "home" }).then(() => {
