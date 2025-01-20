@@ -3,6 +3,12 @@
 Este projeto foi desenvolvido para explorar as funcionalidades do Vue.js e Tailwind CSS, consumindo dados de uma API aberta para criar uma interface funcional e responsiva de uma rede social fictícia.
 
 ---
+## 🖥️ **Deploy no GitHub Pages**
+
+O projeto foi configurado para funcionar no GitHub Pages utilizando `baseURL` corretamente. Acesse:
+- [Demo do Projeto](https://anacarolt.github.io/teste-vite/)
+
+---
 
 ## 🎯 **Objetivo do Projeto**
 
@@ -129,11 +135,6 @@ src/
    ```
 
 ---
-
-## 🖥️ **Deploy no GitHub Pages**
-
-O projeto foi configurado para funcionar no GitHub Pages utilizando `baseURL` corretamente. Acesse:
-- [Demo do Projeto](https://anacarolt.github.io/teste-vite/)
 
 
 # projeto_rede_social
