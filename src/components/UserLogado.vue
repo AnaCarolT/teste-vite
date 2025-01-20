@@ -1,13 +1,13 @@
 <template>
-  <!-- Link clicável para o perfil do usuário principal -->
-  <div @click="navigateToProfile" class="cursor-pointer">
+  <!-- Link para o perfil do usuário principal -->
+  <a :href="`${baseURL}profile/${main}`">
     <!-- Imagem do perfil do usuário principal com efeitos de hover -->
     <img
       :src="`https://i.pravatar.cc/50?img=${main}`"
       class="rounded-full border-4 border-blue-900 transition-transform duration-600 hover:scale-105 hover:border-indigo-500"
       alt="User Avatar"
     />
-  </div>
+  </a>
 </template>
 
 <script>
@@ -16,13 +16,12 @@ export default {
     return {
       // ID do usuário principal que está logado
       main: 11, // Substituir pelo ID do usuário autenticado
+      baseURL: '/', // Caminho base dinâmico
     };
   },
-  methods: {
-    navigateToProfile() {
-      // Navega para a rota do perfil do usuário
-      this.$router.push(`/profile/${this.main}`);
-    },
+  mounted() {
+    // Define o baseURL dinamicamente com base no ambiente do Vite
+    this.baseURL = import.meta.env.BASE_URL || '/teste-vite/';
   },
 };
 </script>
