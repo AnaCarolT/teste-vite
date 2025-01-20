@@ -29,6 +29,7 @@
 
     <!-- Coluna direita: Componentes "Pessoas que talvez conheça" e "Trends" -->
     <div class="main-right col-span-1 space-y-4">
+      <!--no conheca-->
       <Trends />
     </div>
   </div>
