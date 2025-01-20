@@ -1,13 +1,11 @@
 <template>
-  <!-- RouterLink para o perfil do usuário principal -->
-  <router-link :to="`/profile/${main}`" class="flex items-center">
-    <!-- Imagem do perfil do usuário principal com efeitos de hover -->
+  <a :href="`profile/${main}`">
     <img
       :src="`https://i.pravatar.cc/50?img=${main}`"
       class="rounded-full border-4 border-blue-900 transition-transform duration-600 hover:scale-105 hover:border-indigo-500"
       alt="User Avatar"
     />
-  </router-link>
+  </a>
 </template>
 
 <script>
@@ -20,6 +18,7 @@ export default {
   },
 };
 </script>
+
 
 <!-- Codigo para teste local -->
 <!-- <template>
