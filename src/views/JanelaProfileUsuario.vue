@@ -29,7 +29,6 @@
 
     <!-- Coluna direita: Componentes "Pessoas que talvez conheça" e "Trends" -->
     <div class="main-right col-span-1 space-y-4">
-      <PessoasQueTalvezConheca />
       <Trends />
     </div>
   </div>
@@ -37,7 +36,6 @@
 
 <script>
 import axios from "axios";
-import PessoasQueTalvezConheca from "../components/PessoasQueTalvezConheca.vue";
 import Trends from "../components/Trends.vue";
 import ProfileUsuario from "../components/ProfileUsuario.vue";
 import Feed from "../components/Feed.vue";
@@ -46,7 +44,6 @@ import CaixaPost from "../components/CaixaPost.vue";
 export default {
   name: "JanelaProfile",
   components: {
-    PessoasQueTalvezConheca,
     Trends,
     ProfileUsuario,
     Feed,
