@@ -23,12 +23,12 @@
         </div>
 
         <!-- Botão para visualizar o perfil do usuário -->
-        <button
-          @click="navigateToProfile(user.id)"
+        <router-link
+          :to="{ name: 'detalhes-profile', params: { id: user.id } }"
           class="py-2 px-3 bg-indigo-800 text-white text-xs rounded-lg hover:bg-indigo-700"
         >
           Mostrar
-        </button>
+        </router-link>
       </div>
     </div>
   </div>
@@ -83,19 +83,6 @@ export default {
       }
 
       return selected;
-    },
-    navigateToProfile(userId) {
-      // Loga o userId no console
-      console.log("Navigating to profile with UserId:", userId);
-
-      // Navega para home e depois para o perfil do usuário
-      if (this.$route.name === "detalhes-profile") {
-        this.$router.push({ name: "home" }).then(() => {
-          this.$router.push({ name: "detalhes-profile", params: { id: userId } });
-        });
-      } else {
-        this.$router.push({ name: "detalhes-profile", params: { id: userId } });
-      }
     },
   },
   mounted() {

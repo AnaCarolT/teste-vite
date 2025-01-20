@@ -103,35 +103,12 @@
               ></path>
             </svg>
           </router-link>
-
-          <!-- Ícone de busca -->
-          <div class="relative group">
-            <router-link to="#">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                stroke-width="2"
-                stroke="currentColor"
-                class="w-6 h-6 hover:scale-105 hover:fill-blue-200"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-                ></path>
-              </svg>
-            </router-link>
-            <!-- Mensagem ao passar o mouse -->
-            <div
-              class="absolute left-0 top-full mt-1 px-2 py-1 bg-gray-700 text-white text-xs rounded shadow opacity-0 group-hover:opacity-100 transition-opacity"
-            >
-              Não implementado ainda!
-            </div>
-          </div>
         </div>
 
         <!-- Avatar do usuário logado -->
-        <UserLogado />
+        <div v-if="$route.params.id !== '11'">
+          <UserLogado />
+        </div>
       </div>
     </div>
   </nav>
