@@ -7,7 +7,7 @@ import DetalhesPosts from "@/views/DetalhesPosts.vue"; // Importar componente
 import Notificacoes from "@/views/Notificacoes.vue";
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(import.meta.env.BASE_URL || '/teste-vite'),
   routes: [
     {
       path: "/",
