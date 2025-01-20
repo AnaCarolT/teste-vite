@@ -54,7 +54,7 @@
           </router-link>
 
           <!-- Ícone Usuários -->
-          <router-link :to="`${baseURL}users`" class="text-black-700">
+          <router-link to="/users" class="text-black-700">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
