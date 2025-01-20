@@ -106,7 +106,7 @@
         </div>
 
         <!-- Avatar do usuário logado -->
-        <div v-if="$route.params.id !== '11'">
+        <div>
           <UserLogado />
         </div>
       </div>

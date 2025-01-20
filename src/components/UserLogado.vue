@@ -1,6 +1,6 @@
 <template>
   <!-- Link clicável para o perfil do usuário principal -->
-  <div @click="navigateToProfile" class="cursor-pointer">
+  <div @click="navigateToProfile" class="cursor-pointer" v-if="$route.params.id === '11'">
     <!-- Imagem do perfil do usuário principal com efeitos de hover -->
     <img
       :src="`https://i.pravatar.cc/50?img=${main}`"
