@@ -16,12 +16,11 @@ export default {
     return {
       // ID do usuário principal que está logado
       main: 11, // Substituir pelo ID do usuário autenticado
-      baseURL: '/', // Caminho base dinâmico
     };
   },
   mounted() {
     // Define o baseURL dinamicamente com base no ambiente do Vite
-    this.baseURL = import.meta.env.BASE_URL || '/';
+    this.baseURL = import.meta.env.BASE_URL;
   },
 };
 </script>
