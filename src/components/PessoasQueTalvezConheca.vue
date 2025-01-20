@@ -1,16 +1,15 @@
 <template>
-  <!-- Componente de sugestão de pessoas que talvez você conheça -->
   <div class="p-4 bg-white border border-gray-200 rounded-lg shadow">
     <h3 class="mb-6 text-xl">Pessoas que talvez conheça</h3>
 
     <div class="space-y-4">
-      <!-- Lista de usuários sugeridos -->
+
       <div
         v-for="user in filteredUsers"
         :key="user.id"
         class="flex items-center justify-between flex-wrap"
       >
-        <!-- Avatar e nome do usuário -->
+
         <div class="flex items-center space-x-2">
           <img
             :src="'https://i.pravatar.cc/300?img=' + user.id"
@@ -21,26 +20,26 @@
             <strong>{{ user.name }}</strong>
           </p>
         </div>
-        <!-- Botão para visualizar o perfil do usuário -->
-        <button
-          @click="navigateToProfile(user.id)"
+        <a
+          :href="`${baseURL}profile/${user.id}`"
           class="py-2 px-3 bg-indigo-800 text-white text-xs rounded-lg hover:bg-indigo-700"
         >
           Mostrar
-        </button>
+        </a>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import axios from "axios";
+import axios from 'axios';
 
 export default {
   data() {
     return {
       users: [], // Todos os usuários buscados da API
       randomUsers: [], // Usuários aleatórios filtrados
+      baseURL: '/', // Define the base URL dynamically
     };
   },
   computed: {
@@ -55,7 +54,7 @@ export default {
       try {
         // Faz a requisição à API para buscar usuários
         const response = await axios.get(
-          "https://jsonplaceholder.typicode.com/users"
+          'https://jsonplaceholder.typicode.com/users'
         );
         this.users = response.data;
 
@@ -66,7 +65,7 @@ export default {
           parseInt(this.$route.params.id)
         );
       } catch (error) {
-        console.error("Erro ao buscar usuários:", error);
+        console.error('Erro ao buscar usuários:', error);
       }
     },
     getRandomUsers(users, count, currentUserId) {
@@ -83,14 +82,11 @@ export default {
 
       return selected;
     },
-    navigateToProfile(userId) {
-      // Navega para o perfil do usuário usando Vue Router
-      this.$router.push(`/profile/${userId}`);
-    },
   },
   mounted() {
     // Chama a função de busca quando o componente é montado
     this.fetchUsers();
+    this.baseURL = import.meta.env.BASE_URL || '/'; // Define o base URL dinamicamente
   },
 };
 </script>
@@ -105,7 +101,6 @@ img {
   height: auto;
 }
 </style>
-
 
 <!-- Codigo para teste local -->
 <!-- <template>
