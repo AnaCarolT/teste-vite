@@ -2,7 +2,7 @@
 
 Este projeto foi desenvolvido para explorar as funcionalidades do Vue.js e Tailwind CSS, consumindo dados de uma API aberta para criar uma interface funcional e responsiva de uma rede social fictícia.
 
-- Listagem: Usuários, posts e comentários são listados.
+- Listagem: Usuários, posts e comentários do bot são listados.
 - Detalhamento: Detalhamento de posts, usuários e notificações por ID.
 - Inserção de dados: É possível inserir posts e vê-los no sistema.
 
